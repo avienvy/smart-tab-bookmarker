@@ -5,11 +5,19 @@
   <style>
     body { width: 300px; padding: 10px; }
     button { display: block; width: 100%; margin: 5px 0; }
+    .checkbox-container { margin: 10px 0; }
+    #contextInput { width: 100%; box-sizing: border-box; } /* Added this line */
   </style>
 </head>
 <body>
-  <button id="bookmarkOnly">1. Bookmark with current name</button>
-  <button id="bookmarkAndClose">2. Bookmark and close tabs</button>
+  <h3>Smart Tab Bookmarker</h3>
+  <div class="checkbox-container">
+    <input type="checkbox" id="randomContextCheckbox">
+    <label for="randomContextCheckbox">Random context</label>
+  </div>
+  <input type="text" id="contextInput" placeholder="Optional context" style="text-align: center;"/>
+  <button id="bookmarkOnly">Save bookmark</button>
+  <button id="bookmarkAndClose">Save bookmark and close other tabs</button>
   <div id="message" style="margin-top: 10px; text-align: center;"></div>
   <script src="popup.js"></script>
 </body>
