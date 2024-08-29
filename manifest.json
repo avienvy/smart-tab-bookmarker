@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Tab Bookmarker",
+  "version": "1.0",
+  "description": "Bookmark all open tabs in a date-time named folder",
+  "permissions": [
+    "tabs",
+    "bookmarks"
+  ],
+  "action": {
+    "default_title": "Smart Tab Bookmarker",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "smart-tab-bookmarker@example.com"
+    }
+  }
+}
