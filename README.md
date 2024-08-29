@@ -1,0 +1,1 @@
+Extension that allow you to bookmark tabs in a single click with pre-named base on date and time. It also allow you to close all tabs while keeping one tab that your currently on open. It's basically Ctrl+Shift+D feature but better (IMO).
