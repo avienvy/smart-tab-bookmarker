@@ -24,12 +24,14 @@ function generateRandomCombination() {
 function getCurrentDateTime(context = '', useRandomContext = false) {
   const now = new Date();
   const dd = String(now.getDate()).padStart(2, '0');
-  const mm = String(now.getMonth() + 1).padStart(2, '0');
-  const yy = String(now.getFullYear()).slice(-2);
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const mm = monthNames[now.getMonth()];
+  const yyyy = String(now.getFullYear());
   const hour = String(now.getHours()).padStart(2, '0');
   const minute = String(now.getMinutes()).padStart(2, '0');
 
-  const dateTimeString = `${dd}-${mm}-${yy} (${hour}:${minute})`;
+  const dateTimeString = `${dd}-${mm}-${yyyy} (${hour}:${minute})`;
 
   if (useRandomContext) {
     const randomContext = generateRandomCombination();
