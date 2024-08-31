@@ -85,8 +85,6 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
     bookmarkTabs(folderName, request.closeTabs)
       .then((folderTitle) => sendResponse({ success: true, folderName: folderTitle }))
       .catch(error => sendResponse({ success: false, error: error.message }));
-
-    // Return true to indicate that the response will be sent asynchronously
     return true;
   }
 });

@@ -7,8 +7,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function showMessage(msg) {
     messageDiv.textContent = msg;
-    setTimeout(() => { messageDiv.textContent = ''; }, 10000);
-  }
+    messageDiv.innerHTML = msg;
+    messageDiv.classList.remove('hidden');
+    messageDiv.classList.add('visible');
+
+    setTimeout(() => {
+        messageDiv.classList.remove('visible');
+        setTimeout(() => {
+            messageDiv.classList.add('hidden');
+            messageDiv.textContent = '';
+        }, 500);
+    }, 3000);
+}
+
+
 
   function handleBookmarkAction(closeTabs) {
     const useRandomContext = randomContextCheckbox.checked;
@@ -21,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
       useRandomContext: useRandomContext
     }).then((response) => {
       if (response.success) {
-        showMessage(`Bookmarks saved to folder: "${response.folderName}"`);
+        showMessage(`Bookmarks saved to folder: <br>"${response.folderName}"`);
       } else {
         showMessage('Error bookmarking tabs: ' + response.error);
       }
