@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function showMessage(msg) {
     messageDiv.textContent = msg;
-    messageDiv.innerHTML = msg;
     messageDiv.classList.remove('hidden');
     messageDiv.classList.add('visible');
 
